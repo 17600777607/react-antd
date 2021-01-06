@@ -1,5 +1,5 @@
 const path = require('path');
-const { override, fixBabelImports, addWebpackAlias, overrideDevServer } = require('customize-cra');
+const { override, fixBabelImports, addWebpackAlias, overrideDevServer,addLessLoader } = require('customize-cra');
 // const { override, fixBabelImports, addWebpackAlias, overrideDevServer, addPostcssPlugins } = require('customize-cra');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
@@ -40,6 +40,13 @@ const addCustomize = () => config => {
 
 module.exports = {
   webpack: override(
+
+    addLessLoader({
+      lessOptions: {
+        javascriptEnabled: true,
+        localIdentName: '[local]--[hash:base64:5]'
+      }
+    }),
     // 配置antd 的按需引入
     fixBabelImports('import', {
       libraryName: 'antd',

@@ -1,0 +1,40 @@
+.layoutBox{
+  height: 100%;
+  display: flex;
+  .layoutHeader{
+    background: #fff;
+    padding: 0;
+    .logo {
+      float: left;
+      width: 200px;
+      height: 46px;
+      line-height: 46px;
+      margin: 9px 0;
+      text-align: center;
+      border-right: 1px solid #efefef;
+    }
+  }
+  .layoutMain{
+    flex: 1;
+    overflow: auto;
+    .mainSider{
+      overflow: auto;
+      background: #fff;
+      border-top: 1px solid #efefef;
+      border-bottom: 1px solid #efefef;
+    }
+    .mainBox{
+      padding: 16px;
+      overflow: auto;
+      //滚动条占用宽度问题
+      -ms-overflow-style: none; /* IE 10+ */
+      scrollbar-width: none; /* Firefox */
+      ::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+    }
+  }
+  .layoutFooter{
+    background: #fff;
+  }
+}
